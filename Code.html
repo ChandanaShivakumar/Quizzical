@@ -1,0 +1,511 @@
+<html>
+<head>
+
+<style type="text/css">
+.bgclr {background-color: white; color: black; font-weight: bold;}
+
+</style>
+
+<script language="JavaScript">
+
+
+// Insert scooter questions number of questions
+var numQues = 40;
+
+// Insert number of choices in each question
+var numChoi = 4;
+
+// Insert number of questions displayed in answer area
+var answers = new Array(0);
+
+// Insert answers to questions
+answers[0] = "Corona";
+answers[1] = "Glabella";
+answers[2] = "King Sudas";
+answers[3] = "Assam";
+answers[4] = "Karnataka";
+answers[5] = "Kandla";
+answers[6] = "Him Vijay";
+answers[7] = "Santiago";
+answers[8] = "Catherine Parr";
+answers[9] = "Spain";
+answers[10] = "Blue, yellow, black, green and red";
+
+answers[11] = "USA";
+answers[12] = "Spencer Perceval";
+answers[13] = "Mike Pence";
+answers[14] = "Almond";
+answers[15] = "Statue of Unity";
+answers[16] = "Ramayana Darshanam";
+answers[17] = "Claire Foy";
+answers[18] = "Courteney Cox";
+answers[19] = "Kurma Avatar";
+answers[20] = "1981 to 2002,2002 to 2011";
+
+answers[21] = "Michael Jordan";
+answers[22] = "Gunther";
+answers[23] = "None";
+answers[24] = "Anopheles Mosquito";
+answers[25] = "Study of Algae";
+answers[26] = "India";
+answers[27] = "Brazil";
+answers[28] = "Congo River";
+answers[29] = "Shih Tzu";
+answers[30] = "Kovalam";
+
+answers[31] = "Stock market";
+answers[32] = "Adam Smith";
+answers[33] = "Washing Soda";
+answers[34] = "Tripitaka";
+answers[35] = "Arctic Ocean";
+answers[36] = "Ernest Rutherford";
+answers[37] = "James Chadwick";
+answers[38] = "Transport water";
+answers[39] = "Japan";
+
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if (currSelection.checked) {
+        if (currSelection.value == answers[i]) {
+          score++;
+		break;
+        }
+      }
+    }
+  }
+  score =Math.round((score/numQues)*100);
+  form.percentage.value = score + "%";
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  
+  form.solutions.value = correctAnswers;
+}
+//  End -->
+</script>
+
+</head>
+
+
+<body bgcolor="LavenderBlush">
+
+<h1 align="center"><font color="DarkRed" face="Helvetica">QUIZZICAL</font></h1>
+
+<form name="quiz">
+
+<h4>1. What is the most famous Mexican beer?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q1" value="Corona">Corona</li>
+  <li><input type="radio" name="q1" value="Tuborg">Tuborg</li>
+  <li><input type="radio" name="q1" value="Foster's">Foster's</li>
+  <li><input type="radio" name="q1" value="Kingfisher">Kingfisher</li>
+</ul>
+
+
+2. The space between two eyebrows is ______
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q2" value="Bowman's capsule.">Bowman's capsule</li>
+  <li><input type="radio" name="q2" value="Lacrimal">Lacrimal</li>
+  <li><input type="radio" name="q2" value="Glabella">Glabella</li>
+  <li><input type="radio" name="q2" value="Talcen">Talcen</li>
+</ul>
+
+
+3.Who defeated the Ten kings in the battle of ten kings?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q3" value="King Pajput">King Rajput</li>
+  <li><input type="radio" name="q3" value="King Sudas">King Sudas</li>
+  <li><input type="radio" name="q3" value="King Nabopolassar">King Nabopolassar</li>
+  <li><input type="radio" name="q3" value="Cyrus The Great">Cyrus The Great</li>
+</ul>
+
+
+4.Which Indian state share the longest land border with Bhutan?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q4" value="Assam">Assam</li>
+  <li><input type="radio" name="q4" value="West Bengal">West Bengal</li>
+  <li><input type="radio" name="q4" value="Sikkim">Sikkim</li>
+  <li><input type="radio" name="q4" value="Maharashtra">Maharashtra</li>
+</ul>
+
+
+5.Which among the following state produces maximum raw silk in India?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q5" value="Bihar">Bihar</li>
+  <li><input type="radio" name="q5" value="West Bengal">West Bengal</li>
+  <li><input type="radio" name="q5" value="Karnataka">Karnataka</li>
+  <li><input type="radio" name="q5" value="Himachal Pradesh">Himachal Pradesh</li>
+</ul>
+
+
+6.Which among the following ports of India is also known as “child of partition”?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q6" value="Kandla">Kandla</li>
+  <li><input type="radio" name="q6" value="Haldia">Haldia</li>
+  <li><input type="radio" name="q6" value="Kolkata">Kolkata</li>
+  <li><input type="radio" name="q6" value="Paradip">Paradip</li>
+</ul>
+
+
+7.What is the name of the Biggest Airborne Exercise recently conducted by the Indian Army?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q7" value="Him Vijay">Him Vijay</li>
+  <li><input type="radio" name="q7" value="Dhruv Sakthi">Dhruv Sakthi</li>
+  <li><input type="radio" name="q7" value="Winged Raider">Winged Raider</li>
+  <li><input type="radio" name="q7" value="Yudh Abhiyas">Yudh Abhiyas</li>
+</ul>
+
+
+8.What is the capital of Chile?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q8" value="Santiago">Santiago</li>
+  <li><input type="radio" name="q8" value="Vatican">Vatican</li>
+  <li><input type="radio" name="q8" value="Ben Nevis">Ben Nevis</li>
+  <li><input type="radio" name="q8" value="Uganda">Uganda</li>
+</ul>
+
+
+9.Who was Henry VIIIs last wife?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q9" value="Diana">Diana</li>
+  <li><input type="radio" name="q9" value="Catherine Parr">Catherine Parr</li>
+  <li><input type="radio" name="q9" value="Julia Gillard ">Julia Gillard </li>
+  <li><input type="radio" name="q9" value="Harriet Willow">Harriet Willow</li>
+</ul>
+
+
+10.Guess the country flag
+<br>
+<img src="Spain.jpg" alt="Spain" height="200" width="300">
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q10" value="Portugese">Portugese</li>
+  <li><input type="radio" name="q10" value="Indonesia">Indonesia</li>
+  <li><input type="radio" name="q10" value="Spain">Spain</li>
+  <li><input type="radio" name="q10" value="China">China</li>
+</ul>
+
+
+11.What are the five colours of the Olympic rings?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q11" value="Blue, yellow, black, green and red">Blue, yellow, black, green and red</li>
+  <li><input type="radio" name="q11" value="NavyBlue, yellow, black, red and green">NavyBlue, yellow, black, red and green</li>
+  <li><input type="radio" name="q11" value="Green, yellow, black, Pink and red">Green, yellow, black, Pink and red</li>
+  <li><input type="radio" name="q11" value="Yellow, Purple, black, green and red">Yellow, Purple, black, green and red</li>
+</ul>
+
+
+12.Who won the FIFA Women's World Cup in 2019?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q12" value="USA">USA</li>
+  <li><input type="radio" name="q12" value="Russia">Russia</li>
+  <li><input type="radio" name="q12" value="Spain">Spain</li>
+  <li><input type="radio" name="q12" value="New Zealand">New Zealand</li>
+</ul>
+
+
+13.Who was the only British Prime Minister to be assassinated?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q13" value="Spencer Perceval">Spencer Perceval</li>
+  <li><input type="radio" name="q13" value="Boris Jhonson">Boris Jhonson</li>
+  <li><input type="radio" name="q13" value="Teresa May">Teresa May</li>
+  <li><input type="radio" name="q13" value="Sir Harold Willson">Sir Harold Willson</li>
+</ul>
+
+
+14.Who is Donald Trump's vice president?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q14" value="Mike Pence">Mike Pence</li>
+  <li><input type="radio" name="q14" value="Amelia">Amelia</li>
+  <li><input type="radio" name="q14" value="Thea">Thea</li>
+  <li><input type="radio" name="q14" value="Phenelope Blossom">Phenelope Blossom</li>
+</ul>
+
+
+15.Which nuts are used in marzipan?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q15" value="Almond">Almond</li>
+  <li><input type="radio" name="q15" value="HazelNut">HazelNut</li>
+  <li><input type="radio" name="q15" value="Cashew">Cashew</li>
+  <li><input type="radio" name="q15" value="Walnut">Walnut</li>
+</ul>
+
+
+16.Which is the tallest statue in India?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q16" value="Shiva of Murudeshwara">Shiva of Murudeshwara</li>
+  <li><input type="radio" name="q16" value="Spring Temple Buddha">Spring Temple Buddha</li>
+  <li><input type="radio" name="q16" value="Statue of Unity">Statue of Unity</li>
+  <li><input type="radio" name="q16" value="Gandhi Statue">Gandhi Statue</li>
+</ul>
+
+
+17.Which work of "Kuvempu" bought him "Gnanapeetha award"?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q17" value="Nakutanti">Nakutanti</li>
+  <li><input type="radio" name="q17" value="Samagra Sahitya">Samagra Sahitya</li>
+  <li><input type="radio" name="q17" value="Antarala">Antarala</li>
+  <li><input type="radio" name="q17" value="Ramayana Darshanam">Ramayana Darshanam</li>
+</ul>
+
+
+18.Who played Queen Elizabeth II in the first two seasons of The Crown?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q18" value="Claire Foy">Claire Foy</li>
+  <li><input type="radio" name="q18" value="Olivia Colman">Olivia Colman</li>
+  <li><input type="radio" name="q18" value="Helena Bonham Carter">Helena Bonham Carter</li>
+  <li><input type="radio" name="q18" value="Charles Dance">Charles Dance</li>
+</ul>
+
+
+19.Guess the lines from the TV series "Friends"<br>
+"Welcome to the real world..It sucks..You're gonna love it!"
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q19" value="Reese Witherson">Reese Witherson</li>
+  <li><input type="radio" name="q19" value="Jane Sibett">Jane Sibett</li>
+  <li><input type="radio" name="q19" value="Courteney Cox">Courteney Cox</li>
+  <li><input type="radio" name="q19" value="Lisa Kudrow">Lisa Kudrow</li>
+</ul>
+
+
+20.Which avatar of Lord Vishnu is depicted in the picture below?
+<br>
+<img src="Kurma Avatar.jpg" alt="Kurma Avatar" height="300" width="300">
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q20" value="Kurma Avatar">Kurma Avatar</li>
+  <li><input type="radio" name="q20" value="Matsya Avatar">Matsya Avatar</li>
+  <li><input type="radio" name="q20" value="Kalki Avatar">Kalki Avatar</li>
+  <li><input type="radio" name="q20" value="Varaha Avatar">Varaha Avatar</li>
+</ul>
+
+
+21.NR Narayana Murthy was the CEO of Infosys from _____ and chairman from _____. 
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q21" value="1986 to 2004,2008 to 2011">1986 to 2004,2008 to 2011</li>
+  <li><input type="radio" name="q21" value="1961 to 2002,1961 to 2002">1961 to 2002,1961 to 2002</li>
+  <li><input type="radio" name="q21" value="1981 to 2004,2010 to 2015">1981 to 2004,2010 to 2015</li>
+  <li><input type="radio" name="q21" value="1981 to 2002,2002 to 2011">1981 to 2002,2002 to 2011</li>
+</ul>
+
+
+22.God of basketball
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q22" value="Michael Jordan">Michael Jordan</li>
+  <li><input type="radio" name="q22" value="Diego Maradona">Diego Maradona</li>
+  <li><input type="radio" name="q22" value="Kobe Bryant">Kobe Bryant</li>
+  <li><input type="radio" name="q22" value="Oscar Robertson">Oscar Robertson</li>
+</ul>
+
+
+23.The six main stars of Friends appeared in all 236 episodes. Who is the next most regular character to appear in the show?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q23" value="Janice Hosenstein">Janice Hosenstein</li>
+  <li><input type="radio" name="q23" value="Carol Willick">Carol Willick</li>
+  <li><input type="radio" name="q23" value="Judy Gellar">Judy Gellar</li>
+  <li><input type="radio" name="q23" value="Gunther">Gunther</li>
+</ul>
+
+
+24.A starts some business with Rs. 50,000. After 3 months B joins him with Rs. 70,000. At the end of the year. In what ratio should they share the profit?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q24" value="1:3">1:3</li>
+  <li><input type="radio" name="q24" value="3:2">3:2</li>
+  <li><input type="radio" name="q24" value="1:5">1:5</li>
+  <li><input type="radio" name="q24" value="None">None</li>
+</ul>
+
+25.What kind of mosquitos carry Malaria?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q25" value="Culex Musquito">Culex Mosquito</li>
+  <li><input type="radio" name="q25" value="Anopheles Mosquito">Anopheles Mosquito</li>
+  <li><input type="radio" name="q25" value="Mansonia Mosquito">Mansonia Mosquito</li>
+  <li><input type="radio" name="q25" value="Culiseta Mosquito">Culiseta Mosquito</li>
+</ul>
+
+26.What is phycology?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q26" value="Study of Mind and behaviour">Study of Mind and behaviour</li>
+  <li><input type="radio" name="q26" value="Study of Brain">Study of Brain</li>
+  <li><input type="radio" name="q26" value="Study of Algae">Study of Algae</li>
+  <li><input type="radio" name="q26" value="All of the above">All of the above</li>
+</ul>
+
+27.Which is the first Asian country to orbit Mars?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q27" value="Vitenam">Vietnam</li>
+  <li><input type="radio" name="q27" value="India">India</li>
+  <li><input type="radio" name="q27" value="Belgium">Belgium</li>
+  <li><input type="radio" name="q27" value="Pakistan">Pakistan</li>
+</ul>
+
+
+28.Which country is the largest producer of Coffee?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q28" value="Vietnam">Vietnam</li>
+  <li><input type="radio" name="q28" value="Colombia">Colombia</li>
+  <li><input type="radio" name="q28" value="Coorg">Coorg</li>
+  <li><input type="radio" name="q28" value="Brazil">Brazil</li>
+</ul>
+
+
+29.Which river crosses the equator twice?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q29" value="Congo River">Congo River</li>
+  <li><input type="radio" name="q29" value="Zaire River">Zaire River</li>
+  <li><input type="radio" name="q29" value="Congue River">Congue River</li>
+  <li><input type="radio" name="q29" value="Ganga River">Ganga River</li>
+</ul>
+
+
+30.Guess the breed of the dog
+<br>
+<img src="Shih Tzu.jpg" alt="Shih Tzu" height="200" width="200">
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q30" value="Maltese">Maltese</li>
+  <li><input type="radio" name="q30" value="Dobermann">Dobermann</li>
+  <li><input type="radio" name="q30" value="Shih Tzu">Shih Tzu</li>
+  <li><input type="radio" name="q30" value="Bichon Frise">Bichon Frise</li>
+</ul>
+
+
+31.Which of these beaches is not in Goa?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q31" value="Anjuna">Anjuna</li>
+  <li><input type="radio" name="q31" value="Baga">Baga</li>
+  <li><input type="radio" name="q31" value="Kovalam">Kovalam</li>
+  <li><input type="radio" name="q31" value="Calangute">Calangute</li>
+</ul>
+
+
+32.The terms ’Bull and Bear’ is associated with ________
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q32" value="Stock market">Stock market</li>
+  <li><input type="radio" name="q32" value="Animal market">Animal market</li>
+  <li><input type="radio" name="q32" value="None of the above">None of the above</li>
+  <li><input type="radio" name="q32" value="All of the above">All of the above</li>
+</ul>
+
+
+33.Who is the father of economics?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q33" value="Adam Smith">Adam Smith</li>
+  <li><input type="radio" name="q33" value="Rakesh Jhunjhunwala">Rakesh Jhunjhunwala</li>
+  <li><input type="radio" name="q33" value="P.V Narasimha Rao">P.V Narasimha Rao</li>
+  <li><input type="radio" name="q33" value="None">None</li>
+</ul>
+
+
+34.What is the common name of Sodium Carbonate?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q34" value="Baking Soda">Baking Soda</li>
+  <li><input type="radio" name="q34" value="Washing Soda">Washing Soda</li>
+  <li><input type="radio" name="q34" value="Soda Lime">Soda Lime</li>
+  <li><input type="radio" name="q34" value="Soda Water">Soda Water</li>
+</ul>
+
+
+35.Which is the sacred book of Buddhists?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q35" value="Avesta">Avesta</li>
+  <li><input type="radio" name="q35" value="Bhagavat Gita">Bhagavat Gita</li>
+  <li><input type="radio" name="q35" value="Jaina Sutras">Jaina Sutras</li>
+  <li><input type="radio" name="q35" value="Tripitaka">Tripitaka</li>
+</ul>
+
+
+36.Which is the smallest Ocean?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q36" value="Pacific Ocean">Pacific Ocean</li>
+  <li><input type="radio" name="q36" value="Arctic Ocean">Arctic Ocean</li>
+  <li><input type="radio" name="q36" value="Indian Ocean">Indian Ocean</li>
+  <li><input type="radio" name="q36" value="South Atlantic Ocean">South Atlantic Ocean</li>
+</ul>
+
+
+37.Who discovered Protons?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q37" value="J.J Thomson">J.J Thomson</li>
+  <li><input type="radio" name="q37" value="Ernest Rutherford">Ernest Rutherford</li>
+  <li><input type="radio" name="q37" value="James Chadwick">James Chadwick</li>
+  <li><input type="radio" name="q37" value="Watson Rutherford">Watson Rutherford</li>
+</ul>
+
+
+38.Who discovered Neutrons?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q38" value="J.J Thomson">J.J Thomson</li>
+  <li><input type="radio" name="q38" value="Ernest Rutherford">Ernest Rutherford</li>
+  <li><input type="radio" name="q38" value="James Chadwick">James Chadwick</li>
+  <li><input type="radio" name="q38" value="Watson Rutherford">Watson Rutherford</li>
+</ul>
+
+
+39.What does ‘Xylem’ in plants do?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q39" value="Transport food">Transport food</li>
+  <li><input type="radio" name="q39" value="Transport food and water">Transport food and water</li>
+  <li><input type="radio" name="q39" value="Transport minerals">Transport minerals</li>
+  <li><input type="radio" name="q39" value="Transport water">Transport water</li>
+</ul>
+
+
+40.Guess the country
+<br>
+<img src="Japan.png" alt="Japan" height="300" width="300">
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q40" value="Indonesia">Indonesia</li>
+  <li><input type="radio" name="q40" value="Japan">Japan</li>
+  <li><input type="radio" name="q40" value="South Korea">South Korea</li>
+  <li><input type="radio" name="q40" value="Thailand">Thailand</li>
+</ul>
+
+<input type="button" value="Get score" onClick="getScore(this.form)">
+<input type="reset" value="Clear answers">
+<p> Score = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br><br>
+
+
+</form>
+</h4>
+
+</body>
+</html>
